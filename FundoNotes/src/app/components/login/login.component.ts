@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/User/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +10,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm !: FormGroup;
   submmited = false;
-  constructor(private frombuilder:FormBuilder){}
+  constructor(private frombuilder:FormBuilder,private user:UserService){}
   ngOnInit(){
     this.loginForm = this.frombuilder.group({
       email:['',[Validators.required,Validators.email]],
       password:['',Validators.required]
     })
   }
-  onSubmit(){
-    if(this.loginForm.invalid){
-      return;
+    //gettter for easy access to form fields
+    get f() {
+      return this.loginForm.controls;
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+  onSubmit(){
+    if(this.loginForm.valid){
+      let payload ={
+        email : this.loginForm.value.email,
+        password : this.loginForm.value.password
+      }
+      console.log(payload);
+      this.user.Login(payload).subscribe((response:any)=>{
+        console.log(response)
+        //localStorage.setItem("token",response.token)
+      })
+    }
   }
 }
