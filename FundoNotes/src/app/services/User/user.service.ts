@@ -16,4 +16,12 @@ export class UserService {
     };
     return this.http.postService("/User/Login",paylode,false,header)
   }
+  Register(payload:any){
+    let header = {
+      header : new HttpHeaders({
+        'Content-Type' : 'application/json',
+      })
+    };
+    return this.http.postService("/User/Register",payload,false,header)
+  }
 }

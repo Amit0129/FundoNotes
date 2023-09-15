@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/User/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   // submitted: false;
   registerForm!: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,private user:UserService) {}
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -28,11 +29,18 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-    // stop here if form is invalid
-    if(this.registerForm.invalid){
-      return;
+    
+    if(this.registerForm.valid){
+      let payload = {
+        firstName:this.registerForm.value.firstName,
+        lastName:this.registerForm.value.lastName,
+        email:this.registerForm.value.email,
+        password:this.registerForm.value.password
+      }
+      this.user.Register(payload).subscribe((response:any)=>{
+        console.log(response)
+      })
     }
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    
   }
 }
