@@ -1,0 +1,227 @@
+.main-container {
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: auto;
+  // margin-left: auto;
+  // margin-right: auto;
+  
+  margin: auto;
+  //padding-top: 50px;
+  margin-top: 10px;
+}
+.title-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-left: 30px;
+}
+form{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.title {
+  display: flex;
+}
+.title-intro {
+  font-size: 22px;
+  //font-weight: 400;
+  margin-top: 35px;
+  font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+}
+.flet {
+  color: blue;
+}
+.ulet {
+  color: red;
+}
+.nlet {
+  color: yellow;
+}
+.dlet {
+  color: blue;
+}
+.olet {
+  color: green;
+}
+.oolet {
+  color: red;
+}
+.title {
+  padding-top: 25px;
+}
+.title > span {
+  direction: ltr;
+  font-size: 24px;
+  line-height: 1.4286;
+  font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+  font-weight: 400;
+}
+
+.left-content {
+  //border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  //margin-left: 30px;
+  margin-top: 35px;
+}
+.full-name {
+  display: flex;
+  justify-content: space-between;
+}
+.first-name {
+  padding: 0px 10px 0px 1px;
+}
+.last-name {
+  padding: 0px 3px 0px 1px;
+}
+.user-gmail mat-form-field {
+  width: 99%;
+}
+.user-password {
+  display: flex;
+  justify-content: space-between;
+}
+.password {
+  padding: 0px 3px 0px 1px;
+}
+.confirm-password {
+  padding: 0px 3px 0px 1px;
+}
+.register-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  margin-bottom: 32px;
+}
+.right-content {
+  //border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.right-content > img {
+  width: 100%;
+}
+.text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-109px);
+}
+
+//Media query
+.mat-form-field {
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .main-container {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .title-intro {
+    font-size: 18px;
+  }
+  .title > span {
+    font-size: 20px;
+  }
+  .left-content {
+    margin-top: 20px;
+  }
+  .full-name {
+    flex-direction: column;
+  }
+  .first-name,
+  .last-name {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .user-gmail mat-form-field {
+    width: auto;
+  }
+  .user-password {
+    flex-direction: column;
+  }
+  .password,
+  .confirm-password {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .register-btns {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .right-content > img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto;
+  }
+  .text-info {
+    transform: translateY(-343px);
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .title-intro {
+    font-size: 18px;
+  }
+  .title > span {
+    font-size: 20px;
+  }
+  .left-content {
+    margin-top: 20px;
+  }
+  .full-name {
+    flex-direction: column;
+  }
+  .first-name,
+  .last-name {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .user-gmail mat-form-field {
+    width: auto;
+  }
+  .user-password {
+    flex-direction: column;
+  }
+  .password,
+  .confirm-password {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .register-btns {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .right-content > img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto;
+  }
+  .text-info {
+    transform: translateY(-346px);
+  }
+}
