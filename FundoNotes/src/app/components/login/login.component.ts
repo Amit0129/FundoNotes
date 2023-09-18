@@ -30,7 +30,7 @@ export class LoginComponent {
       console.log(payload);
       this.user.Login(payload).subscribe((response:any)=>{
         console.log(response)
-        //localStorage.setItem("token",response.token)
+        localStorage.setItem('token',response.data.token)
       })
     }
   }

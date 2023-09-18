@@ -1,0 +1,97 @@
+.main-cointainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.main-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  //border: 1px solid red;
+}
+.logo > img {
+  width: 45px;
+  height: 44px;
+  cursor: pointer;
+  padding-right: 4px;
+}
+.heading {
+  display: inline-block;
+  font-family: "Product Sans", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  position: relative;
+  top: -1.5px;
+  vertical-align: middle;
+}
+.main-search{
+    //border: 1px solid black;
+    width: 70%;
+}
+.searchbox{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    padding-top: 8px;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    width: 77%;
+    height: 45px;
+    color: #2d2e2f;
+    margin-left: 80px;
+    outline: none;
+    //border: 1px solid blue;
+}
+.searchinput{
+    height: 25px;
+    border: none;
+    background: none;
+    width: 500px;
+    padding-left: 10px;
+    font-size: large;
+    outline: none;
+}
+.icon-containar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    //border: 1px solid green;
+}
+.sidenav-container{
+  height: 80vh;
+}
+mat-sidenav{
+  width: 45vh;
+  margin-top: 10vh
+}
+a{
+  border-radius: 0px 30px 30px 0px;
+}
+.list{
+  display: flex;
+  text-align: center;
+  padding-left: 2vh;
+}
+.image{
+  height: 24px;
+  width: 24px;
+}
+.span{
+  margin-left: 5vh;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    // line-height: 1.25rem;
+}
