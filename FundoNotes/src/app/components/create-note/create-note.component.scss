@@ -41,3 +41,40 @@
   outline: none;
   font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif, bold;
 }
+.icon-container{
+  display: flex;
+  //flex-flow: row wrap;
+  justify-content: space-between;
+  height: 6vh;
+  //border: 1px solid black;
+}
+.icon-only{
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  //border: 1px solid red;
+}
+.extra-icon{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.image{
+  //margin-top: 5px;
+  height: 20px;
+}
+.close-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 6vh;
+  //border: 1px solid red;
+}
+.close{
+  height: 100%;
+  padding-top: 6px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

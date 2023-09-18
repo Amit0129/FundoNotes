@@ -14,4 +14,7 @@ export class CreateNoteComponent {
   Show() {
     this.isShow = true;
   }
+  Close(){
+    
+  }
 }

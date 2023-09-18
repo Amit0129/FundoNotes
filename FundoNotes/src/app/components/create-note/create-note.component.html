@@ -26,5 +26,22 @@
       </button>
     </div>
   </div>
+  <div *ngIf="isShow" class="icon-container">
+    <div class="icon-only">
+    <div class="icon-comp">
+      <app-icons></app-icons>
+    </div>
+
+    <div class="extra-icon">
+      <img class="image"  src="../../../assets/createnoteicon/undo_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+      <img class="image" src="../../../assets/createnoteicon/redo_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+    </div>
+  </div>
+    <div class="close-btn">
+    <button (click)="Close()" class="close">
+      <h4>Close</h4>
+    </button>
+  </div>
+  </div>
 </form>
 </div>
