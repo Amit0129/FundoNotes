@@ -1,9 +1,10 @@
 <div class="note-container" style="margin-top: 100px">
+  <form>
     <div *ngIf="isShow" class="firstele">
         <input matInput [(ngModel)]="title" class="title" placeholder="Title" />
         <img class="pin" src="../../../assets/pin note.svg" />
       </div>
-  <div class="takeNotes" [ngClass]="{ hidden: !isShow }" (click)="Show()">
+  <div class="takeNotes" (click)="Show()">
     <div>
       <input
         matInput
@@ -25,4 +26,5 @@
       </button>
     </div>
   </div>
+</form>
 </div>

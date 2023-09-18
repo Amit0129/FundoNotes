@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
 import { GetallNoteComponent } from './components/getall-note/getall-note.component';
+import { IconsComponent } from './components/icons/icons.component';
 
 const routes: Routes = [
   {
@@ -16,10 +17,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'demo',
-    component: DemoComponent,
   },
   {
     path: 'dashboard',

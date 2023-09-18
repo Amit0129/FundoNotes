@@ -1,1 +1,15 @@
-<p>display-note works!</p>
+<div class="display">
+<div *ngFor="let item of noteList" class="card">
+<mat-card class="noteContainer">
+  <div class="title">
+    <div class="titleOutput">{{item.title}}</div>
+    <button mat-icon-button class="btn"><img class="titlePin" mat-card-avatar src="../../../assets/pin note.svg" alt=""></button>
+  </div>
+
+  <div class="note">
+    <div class="discriptionOutput">{{item.note}}</div>
+  </div>
+</mat-card>
+</div>
+</div>
+

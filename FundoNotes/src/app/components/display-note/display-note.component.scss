@@ -1,0 +1,52 @@
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: -40px;
+    //border: 1px solid red;
+}
+mat-card {
+    min-width: 240px;
+    margin : 30px;
+    padding: 5px 5px;
+    //border: 1px solid black;
+    width: fit-content;
+}
+.btn{
+    visibility: hidden;
+}
+mat-card:hover{
+    box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+    .btn{
+        visibility: visible;
+    }
+}
+.titleOutput,.discriptionOutput{
+    width: 90%;
+    display: inline;
+    padding:10px;
+    outline: none;
+    border: none;
+    display: flex;
+    text-align: left;
+}
+.title{
+    display: flex;
+    flex-flow: row;
+}
+.titleOutput {
+    font-size: 16px;
+    font-weight: 450;
+    color: black;
+}
+.titlePin {
+    width: 20px;
+    height: auto;
+}
+.descriptionOutput {
+    font-size: 15px;
+}
