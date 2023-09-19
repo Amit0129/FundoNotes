@@ -8,8 +8,17 @@ import { HttpHeaders } from '@angular/common/http';
 export class NoteService {
   token:any;
   constructor(private http: HttpService) {this.token = localStorage.getItem('token')}
+  AddNote(paylode:any){
+    let httpOption={
+      headers:new HttpHeaders({
+        'Content-type' : 'application/json',
+        Authorization:'Bearer '+ this.token
+      })
+    }
+    console.log(paylode);
+    return this.http.postService('/Note',paylode,true,httpOption)
+  }
   GetAllNote(){
-    
     console.log(this.token)
     let httpOption={
       headers:new HttpHeaders({

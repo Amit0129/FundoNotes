@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NoteService } from 'src/app/services/Note/note.service';
 
 @Component({
   selector: 'app-create-note',
@@ -10,11 +11,21 @@ export class CreateNoteComponent {
   isShow:boolean = false;
   description:any;
   title:any;
-  constructor(){}
+  constructor(private note:NoteService){}
   Show() {
     this.isShow = true;
   }
   Close(){
-    
+    this.isShow = false;
+    let reqdata = {
+      title : this.title,
+      note : this.description
+    }
+    console.log(reqdata);
+    this.note.AddNote(reqdata).subscribe((response : any)=>{
+      console.log(response.message);
+    })
+    this.title = null;
+    this.description = null;
   }
 }

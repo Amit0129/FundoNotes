@@ -1,6 +1,7 @@
 .display{
     display: flex;
     flex-wrap: wrap;
+    //border: 1px solid black;
 }
 .card{
     display: flex;
@@ -11,9 +12,10 @@
 }
 mat-card {
     min-width: 240px;
+    max-width: 240px;
     margin : 30px;
     padding: 5px 5px;
-    //border: 1px solid black;
+    //border: 1px solid rgb(21, 216, 86);
     width: fit-content;
 }
 .btn{
@@ -49,4 +51,10 @@ mat-card:hover{
 }
 .descriptionOutput {
     font-size: 15px;
+    
+}
+.note{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

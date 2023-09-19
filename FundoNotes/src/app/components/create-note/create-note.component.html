@@ -1,5 +1,4 @@
 <div class="note-container" style="margin-top: 100px">
-  <form>
     <div *ngIf="isShow" class="firstele">
         <input matInput [(ngModel)]="title" class="title" placeholder="Title" />
         <img class="pin" src="../../../assets/pin note.svg" />
@@ -26,15 +25,15 @@
       </button>
     </div>
   </div>
-  <div *ngIf="isShow" class="icon-container">
+  <div  *ngIf="isShow" class="icon-container">
     <div class="icon-only">
     <div class="icon-comp">
       <app-icons></app-icons>
     </div>
 
     <div class="extra-icon">
-      <img class="image"  src="../../../assets/createnoteicon/undo_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-      <img class="image" src="../../../assets/createnoteicon/redo_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+      <button mat-icon-button matTooltip="Undo"><img class="image"  src="../../../assets/createnoteicon/undo_FILL0_wght400_GRAD0_opsz48.svg" alt=""></button>
+      <button mat-icon-button matTooltip="Redo"><img class="image" src="../../../assets/createnoteicon/redo_FILL0_wght400_GRAD0_opsz48.svg" alt=""></button>
     </div>
   </div>
     <div class="close-btn">
@@ -43,5 +42,4 @@
     </button>
   </div>
   </div>
-</form>
 </div>
