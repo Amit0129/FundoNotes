@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./display-note.component.scss']
 })
 export class DisplayNoteComponent {
+  display:boolean = true;
   @Input() noteList: any
-
+  update(){
+    
+  }
 }

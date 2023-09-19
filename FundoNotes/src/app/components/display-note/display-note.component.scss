@@ -12,7 +12,7 @@
 }
 mat-card {
     min-width: 240px;
-    max-width: 240px;
+    //max-width: 240px;
     margin : 30px;
     padding: 5px 5px;
     //border: 1px solid rgb(21, 216, 86);
@@ -21,9 +21,15 @@ mat-card {
 .btn{
     visibility: hidden;
 }
+.icon-compo{
+    visibility: hidden;
+}
 mat-card:hover{
     box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
     .btn{
+        visibility: visible;
+    }
+    .icon-compo{
         visibility: visible;
     }
 }
@@ -54,7 +60,9 @@ mat-card:hover{
     
 }
 .note{
+    max-width: 240px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+

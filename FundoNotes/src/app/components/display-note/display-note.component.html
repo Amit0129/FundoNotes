@@ -1,4 +1,4 @@
-<div class="display">
+<div class="display" *ngIf = 'true' (click)="update()">
 <div *ngFor="let item of noteList" class="card">
 <mat-card class="noteContainer">
   <div class="title">
@@ -8,6 +8,12 @@
 
   <div class="note">
     <div class="discriptionOutput">{{item.note}}</div>
+  </div>
+  
+  <div class="icon">
+    <div class="icon-compo">
+      <app-icons></app-icons>
+    </div>
   </div>
 </mat-card>
 </div>
