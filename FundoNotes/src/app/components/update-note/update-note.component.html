@@ -1,0 +1,15 @@
+<div class="cointainer">
+    <div class="note">
+        <div>
+            <input mat-input [(ngModel)] = "title" class="title" placeholder="title">
+            <img class="pin" src="../../../assets/pin note.svg" alt="">
+        </div>
+        <div>
+            <input mat-input [(ngModel)] = "description" class="description" placeholder="description">
+        </div>
+        <div class="icon">
+            <app-icons></app-icons>
+            <button mat-button class="closeBtn" (click) = "updateNote()">Close</button>
+        </div>
+    </div>
+</div>

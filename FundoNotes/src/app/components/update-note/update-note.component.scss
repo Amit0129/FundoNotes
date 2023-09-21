@@ -1,0 +1,50 @@
+.cointainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 20px;
+    padding: 10px 0px 10px 5px;    
+}
+.pin{
+    opacity: 0.7;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.title{
+    min-height: 10px;
+    padding: 10px 15px;
+    
+    padding-left: 5px;
+    font-size: large;
+    width: 400px;
+    border: none;
+    outline: none;
+    font: normal 18px Google Sans,Roboto,Helvetica,Arial,sans-serif;
+}
+.description{
+    font-size: medium;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    width: 400px;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -35px;
+}
+.closeBtn{
+    padding-top: 10px;
+    border: none;
+    background-color: white;
+}

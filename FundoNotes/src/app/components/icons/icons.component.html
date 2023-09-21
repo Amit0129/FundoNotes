@@ -3,6 +3,10 @@
     <button mat-icon-button matTooltip="Collaborator"><img class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
     <button mat-icon-button matTooltip="Backgroud option"><img class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
     <button mat-icon-button matTooltip="Add image"><img class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    <button mat-icon-button matTooltip="Archive"><img class="noteIcon" mat-card-avatar src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    <button mat-icon-button matTooltip="More"><img class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button> 
+    <button mat-icon-button matTooltip="Archive" (click)="archiveNote()"><img class="noteIcon" mat-card-avatar src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
+    <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu"><img  class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+    <!-- <img [matMenuTriggerFor]="menu" class="noteIcon" mat-card-avatar src="../../../assets/createnoteicon/more_vert_FILL0_wght400_GRAD0_opsz48.svg"> -->
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="deleteNote()">Delete note</button>
+    </mat-menu> 
 </div>

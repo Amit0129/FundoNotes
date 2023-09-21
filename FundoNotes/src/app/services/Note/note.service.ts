@@ -21,12 +21,40 @@ export class NoteService {
   GetAllNote(){
     console.log(this.token)
     let httpOption={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: 'Bearer ' + this.token
+      })
+    }
+    console.log(httpOption);
+    return this.http.getService('/Note',true,httpOption);
+  }
+  TrashNote(payload:any){
+    console.log(payload)
+    let httpOption={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: 'Bearer ' + this.token
+      })
+    }
+    return this.http.patchService(`/Note/IsTrash/${payload.noteid}`,payload,true,httpOption)
+  }
+  ArchiveNote(payload:any){
+    let httpOption = {
       headers:new HttpHeaders({
         'Content-type' : 'application/json',
         Authorization:'Bearer '+ this.token
       })
     }
-    console.log(httpOption);
-    return this.http.getService('/Note',true,httpOption);
+    return this.http.patchService(`/Note/IsArchive/${payload.noteid}`,payload,true,httpOption)
+  }
+  UpdateNote(payload:any){
+    let httpOption = {
+      headers:new HttpHeaders({
+        'Content-type' : 'application/json',
+        Authorization:'Bearer '+ this.token
+      })
+    }
+    return this.http.putService('/Note',payload,true,httpOption)
   }
 }

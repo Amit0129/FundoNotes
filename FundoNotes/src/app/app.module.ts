@@ -14,21 +14,23 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { DemoComponent } from './components/demo/demo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { GetallNoteComponent } from './components/getall-note/getall-note.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrationComponent, DemoComponent, DashboardComponent, CreateNoteComponent, GetallNoteComponent, DisplayNoteComponent, IconsComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent, DashboardComponent, CreateNoteComponent, GetallNoteComponent, DisplayNoteComponent, IconsComponent, UpdateNoteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -44,7 +46,9 @@ import { IconsComponent } from './components/icons/icons.component';
     MatTooltipModule,
     MatListModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

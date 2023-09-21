@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/User/user.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { UserService } from 'src/app/services/User/user.service';
 export class LoginComponent {
   loginForm !: FormGroup;
   submmited = false;
-  constructor(private frombuilder:FormBuilder,private user:UserService){}
+  
+  constructor(private frombuilder:FormBuilder,private user:UserService,private route:Router){}
   ngOnInit(){
     this.loginForm = this.frombuilder.group({
       email:['',[Validators.required,Validators.email]],
@@ -31,6 +33,7 @@ export class LoginComponent {
       this.user.Login(payload).subscribe((response:any)=>{
         console.log(response)
         localStorage.setItem('token',response.data.token)
+        this.route.navigateByUrl('/dashboard/getallnote')
       })
     }
   }

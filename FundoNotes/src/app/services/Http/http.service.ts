@@ -13,6 +13,13 @@ export class HttpService {
     return this.httpclient.post(this.baseUrl + url,reqdata,token && httpOption);
   }
   getService(url:string, token:boolean, httpheaderOption:any){
-    return this.httpclient.get(this.baseUrl+url,token && httpheaderOption)
+    return this.httpclient.get(this.baseUrl+url,token && httpheaderOption);
+  }
+  patchService(url:string,reqdata:any,token:boolean,httpOption:any ={})
+  {
+    return this.httpclient.patch(this.baseUrl+url,reqdata,token && httpOption);
+  }
+  putService(url:string, reqdata:any, token:boolean, httpOption:any){
+    return this.httpclient.put(this.baseUrl+url,reqdata,true && httpOption);
   }
 }
