@@ -53,12 +53,15 @@
         </button>
       </div>
       <div class="icon-one">
-        <button mat-icon-button matTooltip="Fundo Account">
+        <button mat-icon-button matTooltip="Fundo Account" [matMenuTriggerFor]="logout">
           <img
             src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg"
             alt=""
           />
         </button>
+        <mat-menu #logout="matMenu">
+          <button mat-menu-item (click)="LogOut()">Log Out</button>
+      </mat-menu>
       </div>
     </div>
   </mat-toolbar>
@@ -69,7 +72,7 @@
         <a mat-list-item>
           <div class="list">
             <img class="image" src="../../../assets/notes.svg" alt="" />
-            <span class="span">Notes</span>
+            <span class="span" >Notes</span>
           </div>
         </a>
 
@@ -97,7 +100,7 @@
         <a mat-list-item>
           <div class="list">
             <img class="image" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
-            <span class="span">Bin</span>
+            <span class="span">Trash</span>
           </div>
         </a>
       </mat-nav-list>

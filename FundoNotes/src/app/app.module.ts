@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     FormsModule,
     MatCardModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

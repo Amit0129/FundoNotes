@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/Note/note.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class CreateNoteComponent {
   isShow: boolean = false;
   description: any;
   title: any;
-  constructor(private note: NoteService) {}
+  constructor(private note: NoteService,private snackBar: MatSnackBar) {}
   Show() {
     this.isShow = true;
   }
@@ -25,6 +26,7 @@ export class CreateNoteComponent {
       console.log(reqdata);
       this.note.AddNote(reqdata).subscribe((response: any) => {
         console.log(response.message);
+        this.snackBar.open("Note Created Sucessfully!")
       });
       this.title = null;
       this.description = null;

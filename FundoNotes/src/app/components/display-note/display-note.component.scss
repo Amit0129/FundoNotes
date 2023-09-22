@@ -1,21 +1,17 @@
 .display{
     display: flex;
     flex-wrap: wrap;
-    //border: 1px solid black;
 }
 .card{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-right: -40px;
-    //border: 1px solid red;
 }
 mat-card {
     min-width: 240px;
-    //max-width: 240px;
     margin : 30px;
     padding: 5px 5px;
-    //border: 1px solid rgb(21, 216, 86);
     width: fit-content;
 }
 .btn{

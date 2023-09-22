@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NoteService } from 'src/app/services/Note/note.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { NoteService } from 'src/app/services/Note/note.service';
   templateUrl: './getall-note.component.html',
   styleUrls: ['./getall-note.component.scss'],
 })
-export class GetallNoteComponent implements OnInit {
+export class GetallNoteComponent implements OnInit{
   noteArray = [];
   constructor(private note: NoteService) {}
   ngOnInit() {
@@ -17,6 +17,7 @@ export class GetallNoteComponent implements OnInit {
       //console.log(response);
       this.noteArray = response.data;
       console.log(this.noteArray);
+      
     });
   }
 }

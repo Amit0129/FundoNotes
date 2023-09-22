@@ -12,6 +12,8 @@ export class DisplayNoteComponent {
   constructor(public dialog: MatDialog){}
   openDialog(item:any){
     const dialogRef = this.dialog.open(UpdateNoteComponent,{
+      height: '156px',
+      width: '500px',
       data:item
     });
     dialogRef.afterClosed().subscribe(result=>{
