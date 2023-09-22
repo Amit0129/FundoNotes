@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
     
   }
   LogOut(){
+    localStorage.clear();
     this.route.navigateByUrl('/login');
   }
 }

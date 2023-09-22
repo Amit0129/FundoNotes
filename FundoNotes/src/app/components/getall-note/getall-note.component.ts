@@ -16,8 +16,22 @@ export class GetallNoteComponent implements OnInit{
     this.note.GetAllNote().subscribe((response: any) => {
       //console.log(response);
       this.noteArray = response.data;
+      this.noteArray = this.noteArray.filter((result:any)=>{
+        return result.isAechive == false && result.isTrash == false;
+      })
       console.log(this.noteArray);
-      
     });
+  }
+  refreshAllNote($event:any){
+    console.log($event);
+    this.getAllNote();
+  }
+  reciveArchiveDisplay($event:any){
+    console.log($event)
+    this.getAllNote();
+  }
+  reciveTrashDisplay($event:any){
+    console.log($event)
+    this.getAllNote();
   }
 }

@@ -8,6 +8,8 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
 import { GetallNoteComponent } from './components/getall-note/getall-note.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,12 @@ const routes: Routes = [
     children:[
       {
         path:'getallnote',component:GetallNoteComponent
+      },
+      {
+        path:'archive-note',component:ArchiveNoteComponent
+      },
+      {
+        path:'trash-note',component:TrashNoteComponent
       }
     ]
   },
@@ -36,10 +44,6 @@ const routes: Routes = [
     path:'',
     redirectTo: '/login',
     pathMatch:'full'
-  },
-  {
-    path:'dilog',
-    component:UpdateNoteComponent
   }
 ];
 

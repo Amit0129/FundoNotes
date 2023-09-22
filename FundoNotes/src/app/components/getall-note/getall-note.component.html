@@ -1,2 +1,2 @@
-<app-create-note></app-create-note>
-<app-display-note [noteList] = "noteArray"></app-display-note>
+<app-create-note (refreshNote)="refreshAllNote($event)"></app-create-note>
+<app-display-note [noteList] = "noteArray" (archiveEventDisplay)="reciveArchiveDisplay($event)" (trashEventDisplay)="reciveTrashDisplay($event)"></app-display-note>

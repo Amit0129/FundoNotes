@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/Note/note.service';
 
@@ -11,6 +11,8 @@ export class CreateNoteComponent {
   isShow: boolean = false;
   description: any;
   title: any;
+  @Output() refreshNote = new EventEmitter();
+  
   constructor(private note: NoteService,private snackBar: MatSnackBar) {}
   Show() {
     this.isShow = true;
@@ -25,6 +27,7 @@ export class CreateNoteComponent {
       };
       console.log(reqdata);
       this.note.AddNote(reqdata).subscribe((response: any) => {
+        this.refreshNote.emit(response);
         console.log(response.message);
         this.snackBar.open("Note Created Sucessfully!")
       });
