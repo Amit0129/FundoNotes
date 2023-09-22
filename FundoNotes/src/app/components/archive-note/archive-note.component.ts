@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/services/Note/note.service';
 
 @Component({
@@ -20,7 +20,9 @@ export class ArchiveNoteComponent implements OnInit{
         return result.isAechive == true && result.isTrash == false;
       })
       console.log(this.noteArray);
-      
     });
+  }
+  refreshAchiveNote($event:any){
+    this.archiveNoteList();
   }
 }
