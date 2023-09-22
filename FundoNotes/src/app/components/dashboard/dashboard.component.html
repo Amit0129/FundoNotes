@@ -22,7 +22,6 @@
       </div>
     </div>
     <div class="icon-containar">
-      
       <div class="icon-one">
         <button mat-icon-button matTooltip="Refresh">
           <img
@@ -53,7 +52,11 @@
         </button>
       </div>
       <div class="icon-one">
-        <button mat-icon-button matTooltip="Fundo Account" [matMenuTriggerFor]="logout">
+        <button
+          mat-icon-button
+          matTooltip="Fundo Account"
+          [matMenuTriggerFor]="logout"
+        >
           <img
             src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg"
             alt=""
@@ -61,7 +64,7 @@
         </button>
         <mat-menu #logout="matMenu">
           <button mat-menu-item (click)="LogOut()">Log Out</button>
-      </mat-menu>
+        </mat-menu>
       </div>
     </div>
   </mat-toolbar>
@@ -72,41 +75,57 @@
         <a mat-list-item routerLink="/dashboard/getallnote">
           <div class="list">
             <img class="image" src="../../../assets/notes.svg" alt="" />
-            <span class="span" >Notes</span>
+            <span class="span">Notes</span>
           </div>
         </a>
 
         <a mat-list-item>
           <div class="list">
-            <img class="image" src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+            <img
+              class="image"
+              src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg"
+              alt=""
+            />
             <span class="span">Reminder</span>
           </div>
         </a>
 
         <a mat-list-item>
           <div class="list">
-            <img class="image" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+            <img
+              class="image"
+              src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg"
+              alt=""
+            />
             <span class="span">Edit labels</span>
           </div>
         </a>
 
-        <a mat-list-item routerLink = '/dashboard/archive-note'>
+        <a mat-list-item routerLink="/dashboard/archive-note">
           <div class="list">
-            <img class="image" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+            <img
+              class="image"
+              src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"
+              alt=""
+            />
             <span class="span">Archive</span>
           </div>
         </a>
 
-        <a mat-list-item>
+        <a mat-list-item routerLink="/dashboard/trash-note">
           <div class="list">
-            <img class="image" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+            <img
+              class="image"
+              src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg"
+              alt=""
+            />
             <span class="span">Trash</span>
           </div>
         </a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <router-outlet></router-outlet>  
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
