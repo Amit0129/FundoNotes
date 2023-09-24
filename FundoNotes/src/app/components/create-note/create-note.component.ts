@@ -29,7 +29,9 @@ export class CreateNoteComponent {
       this.note.AddNote(reqdata).subscribe((response: any) => {
         this.refreshNote.emit(response);
         console.log(response.message);
-        this.snackBar.open("Note Created Sucessfully!")
+        this.snackBar.open('Note created  Successfully', '', {
+          duration: 1000,
+        });
       });
       this.title = null;
       this.description = null;

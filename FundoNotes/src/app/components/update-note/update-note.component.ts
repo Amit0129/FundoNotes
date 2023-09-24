@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -14,6 +14,7 @@ export class UpdateNoteComponent {
   title: any;
   description: any;
   id:any;
+
   constructor(public dialogRef: MatDialogRef<UpdateNoteComponent>,@Inject(MAT_DIALOG_DATA) public data:any,private note:NoteService) 
   {
     this.title = data.title,
@@ -26,7 +27,7 @@ export class UpdateNoteComponent {
       title : this.title,
       note : this.description
     }
-    return this.note.UpdateNote(payload).subscribe((response) =>{
+    this.note.UpdateNote(payload).subscribe((response) =>{
       console.log(response)
       this.dialogRef.close();
     })

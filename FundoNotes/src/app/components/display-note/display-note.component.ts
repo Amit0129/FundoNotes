@@ -11,6 +11,7 @@ export class DisplayNoteComponent {
   @Input() noteList: any
   @Output() archiveEventDisplay =new EventEmitter<any>();
   @Output() trashEventDisplay =new EventEmitter<any>();
+  @Output() updatesEventDisplay = new EventEmitter();
   
   constructor(public dialog: MatDialog){}
   openDialog(item:any){
@@ -20,6 +21,7 @@ export class DisplayNoteComponent {
       data:item
     });
     dialogRef.afterClosed().subscribe(result=>{
+      this.updatesEventDisplay.emit(result);
       console.log("Dilog box was closed",result)
     })
   }

@@ -19,8 +19,10 @@ export class IconsComponent {
     }
     return this.note.TrashNote(payload).subscribe((response:any)=>{
       this.trashEvent.emit(response);
-      console.log(response.message)
-      this.snackBar.open("Note binned")
+      //console.log(response.message)
+      this.snackBar.open("Note binned","",{
+        duration:1000
+      });
     })
   }
   archiveNote(){
@@ -30,8 +32,10 @@ export class IconsComponent {
     console.log(paload);
     return this.note.ArchiveNote(paload).subscribe((response:any)=>{
       this.archiveEvent.emit(response);
-      console.log(response.message)
-      this.snackBar.open("Note archived")
+      //console.log(response.message)
+      this.snackBar.open("Note archived","",{
+        duration:1000
+      })
     })
   }
 
