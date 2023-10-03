@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+
 import { NoteService } from 'src/app/services/Note/note.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { NoteService } from 'src/app/services/Note/note.service';
 })
 export class GetallNoteComponent implements OnInit{
   noteArray = [];
-  constructor(private note: NoteService) {}
+  data:any;
+  constructor(private note: NoteService ) {}
   ngOnInit() {
     this.getAllNote();
+    
   }
   getAllNote() {
     this.note.GetAllNote().subscribe((response: any) => {
@@ -20,21 +23,26 @@ export class GetallNoteComponent implements OnInit{
       this.noteArray = this.noteArray.filter((result:any)=>{
         return result.isAechive == false && result.isTrash == false;
       })
-      console.log(this.noteArray);
+      //console.log(this.noteArray);
     });
   }
+  //getting search data from search bar
+
   refreshAllNote($event:any){
     //console.log($event);
     this.getAllNote();
   }
+
   reciveArchiveDisplay($event:any){
     //console.log($event)
     this.getAllNote();
   }
+
   reciveTrashDisplay($event:any){
     //console.log($event)
     this.getAllNote();
   }
+
   reciveUpdatDisplay($event:any){
     this.getAllNote();
   }

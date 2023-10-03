@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NoteService } from 'src/app/services/Note/note.service';
+import { DataService } from 'src/app/services/Data/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,11 +9,15 @@ import { NoteService } from 'src/app/services/Note/note.service';
 })
 export class DashboardComponent implements OnInit {
 
-  noteArray = [];
-  constructor(private note: NoteService,private route:Router) {}
+  constructor(private route:Router,private dataService:DataService) {}
   ngOnInit() {
     
   }
+  searchNote(event:any){
+    //console.log(event.target.value)
+    this.dataService.changeData(event.target.value);
+  }
+
   LogOut(){
     localStorage.removeItem('token');
     this.route.navigateByUrl('/login');

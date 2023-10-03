@@ -1,5 +1,5 @@
 <div class="display">
-<div *ngFor="let item of noteList" class="card">
+<div class="card" *ngFor="let item of noteList | search : searchString">
 <mat-card class="noteContainer">
   <div class="title" (click)="openDialog(item)">
     <div class="titleOutput">{{item.title}}</div>
