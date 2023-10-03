@@ -12,7 +12,7 @@
 
   <div class="icon">
     <div class="icon-compo">
-      <app-icons [notes] = 'item' (archiveEvent)="reciveArchive($event)" (trashEvent)="reciveTrash($event)"></app-icons>
+      <app-icons [notes] = 'item' (archiveEvent)="reciveArchive($event)" (trashEvent)="reciveTrash($event)" (deleteEvent)="reciveDelete($event)" [isDelete]="chilsIsTrash"></app-icons>
     </div>
   </div>
 </mat-card>

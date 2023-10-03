@@ -19,10 +19,11 @@ export class ArchiveNoteComponent implements OnInit{
       this.noteArray = this.noteArray.filter((result:any)=>{
         return result.isAechive == true && result.isTrash == false;
       })
-      console.log(this.noteArray);
+      //console.log(this.noteArray);
     });
   }
   refreshAchiveNote($event:any){
     this.archiveNoteList();
   }
+ 
 }

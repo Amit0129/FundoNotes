@@ -1,3 +1,3 @@
 <div style="margin-top: 100px;">
-    <app-display-note [noteList] = "noteArray" (trashEventDisplay)="refreshTrasnNote($event)"></app-display-note>
+    <app-display-note [noteList] = "noteArray" (trashEventDisplay)="refreshTrasnNote($event)" (deleteEventDiaplay)="refershAfeterDelete($event)" [isTrash]='isDelete'></app-display-note>
 </div>

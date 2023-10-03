@@ -8,6 +8,7 @@ import { NoteService } from 'src/app/services/Note/note.service';
 })
 export class TrashNoteComponent implements OnInit{
   noteArray = [];
+  isDelete = 'true';
   constructor(private note:NoteService){}
   
   ngOnInit(){
@@ -24,6 +25,9 @@ export class TrashNoteComponent implements OnInit{
     });
   }
   refreshTrasnNote($event:any){
+    this.GetAllTrashNode();
+  }
+  refershAfeterDelete($event:any){
     this.GetAllTrashNode();
   }
 }

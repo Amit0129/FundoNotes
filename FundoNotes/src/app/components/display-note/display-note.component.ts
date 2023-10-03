@@ -9,15 +9,22 @@ import { DataService } from 'src/app/services/Data/data.service';
   styleUrls: ['./display-note.component.scss']
 })
 export class DisplayNoteComponent implements OnInit {
-  @Input() noteList: any
+  @Input() noteList: any;
+  @Input() isTrash:any;
+  chilsIsTrash:boolean=true;
+  
+
+
   @Output() archiveEventDisplay =new EventEmitter<any>();
   @Output() trashEventDisplay =new EventEmitter<any>();
-  @Output() updatesEventDisplay = new EventEmitter();
+  @Output() updatesEventDisplay = new EventEmitter<any>();
+  @Output() deleteEventDiaplay = new EventEmitter<any>();
   searchString:any;
   
   constructor(public dialog: MatDialog,private dataService:DataService){}
   
   ngOnInit(){
+    this.chilsIsTrash = this.isTrash;
     this.dataService.currentMessage.subscribe(resultData =>{
       this.searchString=resultData
       console.log(this.searchString)
@@ -37,12 +44,15 @@ export class DisplayNoteComponent implements OnInit {
     })
   }
   reciveArchive($event:any){
-    console.log($event)
+    //console.log($event)
     this.archiveEventDisplay.emit($event)
   }
   reciveTrash($event:any){
-    console.log($event)
+    //console.log($event)
     this.trashEventDisplay.emit($event)
+  }
+  reciveDelete($event:any){
+    this.deleteEventDiaplay.emit($event)
   }
 }
 

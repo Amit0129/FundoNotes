@@ -10,10 +10,13 @@ import { NoteService } from 'src/app/services/Note/note.service';
 export class IconsComponent {
   constructor(private note : NoteService,private snackBar: MatSnackBar){}
   @Input() notes:any;
-  @Output() archiveEvent =new EventEmitter<any>();
-  @Output() trashEvent =new EventEmitter<any>();
+  @Input() isDelete:any;
+
+  @Output() archiveEvent = new EventEmitter<any>();
+  @Output() trashEvent = new EventEmitter<any>();
+  @Output() deleteEvent = new EventEmitter<any>();
   
-  deleteNote(){
+  trashNote(){
     let payload ={
      noteid : this.notes.noteId
     }
@@ -34,6 +37,18 @@ export class IconsComponent {
       this.archiveEvent.emit(response);
       //console.log(response.message)
       this.snackBar.open("Note archived","",{
+        duration:1000
+      })
+    })
+  }
+
+  deleteNote(){
+      let noteid : any= this.notes.noteId;
+     
+    return this.note.DeleteNote(noteid).subscribe((response:any)=>{
+      this.deleteEvent.emit(response);
+      //this.archiveNote();
+      this.snackBar.open("Note Deleted","",{
         duration:1000
       })
     })

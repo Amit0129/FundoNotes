@@ -60,4 +60,14 @@ export class NoteService {
     }
     return this.http.putService('/Note',payload,true,httpOption)
   }
+
+  DeleteNote(noteId:any){
+    let httpOption ={
+      headers:new HttpHeaders({
+        'Content-type' : 'application/json',
+        Authorization:'Bearer '+ this.token
+      })
+    }
+    return this.http.DeleteService(`/Note/${noteId}`, true, httpOption)
+  }
 }
